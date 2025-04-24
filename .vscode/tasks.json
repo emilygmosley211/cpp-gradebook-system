@@ -1,0 +1,21 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "build gradebook",
+        "type": "shell",
+        "command": "g++",
+        "args": [
+          "-g",
+          "gradebook.cpp",
+          "-o",
+          "gradebook"         // no .exe here
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": ["$gcc"]
+      }
+    ]
+  }
