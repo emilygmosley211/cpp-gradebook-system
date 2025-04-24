@@ -53,3 +53,31 @@ int main() {
     }
 
     sortGrades(studentNames, studentGrades, numStudents);
+
+    cout << "\nSorted Grades:\n";
+    for (int i = 0; i < numStudents; ++i) {
+        cout << studentNames[i] << ": " << studentGrades[i] << endl;
+    }
+
+    string searchName;
+    cout << "\nEnter student name to search: ";
+    cin >> ws;
+    getline(cin, searchName);
+    int index = searchStudent(studentNames, studentGrades, numStudents, searchName);
+    if (index != -1) {
+        cout << searchName << "'s grade: " << studentGrades[index] << endl;
+    } else {
+        cout << "Student not found." << endl;
+    }
+
+    double average;
+    int highest, lowest;
+    calculateStatistics(studentGrades, numStudents, average, highest, lowest);
+
+    cout << "\nClass Statistics:\n";
+    cout << "Average Grade: " << average << endl;
+    cout << "Highest Grade: " << highest << endl;
+    cout << "Lowest Grade: " << lowest << endl;
+
+    return 0;
+}
